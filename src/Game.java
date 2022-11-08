@@ -5,8 +5,8 @@ public class Game {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println(currentPlayer.getName() + " fait un choix entre :");
-        System.out.println(" Pierre, Feuille ou Ciseaux. ");
-        String chosenMove = scanner.nextLine();
+        System.out.println(" 1 (Pierre), 2 (Feuille) ou 3 (Ciseaux). ");
+        int chosenMove = scanner.nextInt();
         currentPlayer.setCurrentMove(chosenMove);
     }
 
@@ -19,12 +19,9 @@ public class Game {
 
             Moves moveP1 = new Moves (player1.getCurrentMove());
 
-            String winnerOfTheRound = moveP1.getResult(player2.getCurrentMove());
+            int updateScore = moveP1.getResult(player2.getCurrentMove());
 
-            switch(winnerOfTheRound){
-                case "win" -> player1.setPoints(player1.getPoints()+1);
-                case "lose" -> player2.setPoints(player2.getPoints()+1);
-            }
+            player1.setPoints(updateScore);
 
             System.out.println(player1.getName() + " :" + player1.getPoints());
             System.out.println(player2.getName() + " :" + player2.getPoints());

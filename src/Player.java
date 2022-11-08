@@ -1,12 +1,12 @@
 public class Player {
     private String name;
     private int points;
-    private String currentMove;
+    private int currentMove;
 
     public Player(String name){
         this.name = name;
         this.points = 0;
-        this.currentMove= "";
+        this.currentMove= 0;
     }
 
     public String getName() {
@@ -18,14 +18,14 @@ public class Player {
     }
 
     public void setPoints(int points){
-        this.points = points;
+        this.points += points;
     }
 
-    public String getCurrentMove() {
+    public int getCurrentMove() {
         return this.currentMove;
     }
 
-    public void setCurrentMove(String value) {
+    public void setCurrentMove(int value) {
         this.currentMove = value;
     }
 }
